@@ -1,23 +1,18 @@
-/**
- * Color object contains a default color, and optionally dark & light variants
- */
-export interface Color {
-  default: string;
-  dark?: string;
-  light?: string;
-}
+import { mapValues } from 'lodash';
+import { ButtonTheme } from 'react-toolbox/components/button';
+import { BUTTON } from 'react-toolbox/components/identifiers';
 
 /**
  * Theme will contain colors for specific purposes, read each type description
  */
-export interface Theme {
+export interface ColorTheme {
   // #region Brand colors
 
   /**
    * A primary color is the color displayed most frequently across your app’s screens and components.
    * If you don’t have a secondary color, your primary color can also be used to accent elements.
    */
-  primary: Color;
+  primary: string;
 
   /**
    * A secondary color provides more ways to accent and distinguish your product. Having a secondary color is optional, and should be applied sparingly to accent select parts of your UI.
@@ -28,85 +23,111 @@ export interface Theme {
    * - Progress bars
    * - Links and headlines
    */
-  secondary: Color;
+  accent: string;
 
   // #endregion
 
   // #region Non-Brand colors
 
   /** Surface colors affect surfaces of components, such as cards, sheets, and menus */
-  surface: Color;
+  surface: string;
 
   /** The background color appears behind scrollable content. */
-  background: Color;
+  background: string;
 
   /** Error color indicates errors components, such as text fields. */
-  error: Color;
+  error: string;
 
   // #endregion
 
   // #region Typografy
 
   /** Text color when on top of Primary color */
-  onPrimary: Color;
+  onPrimary: string;
 
   /** Text color when on top of Secondary color */
-  onSecondary: Color;
+  onSecondary: string;
 
   /** Text color when on top of Background color */
-  onBackground: Color;
+  onBackground: string;
 
   /** Text color when on top of Surface color */
-  onSurface: Color;
+  onSurface: string;
 
   /** Text color when on top of Error color */
-  onError: Color;
+  onError: string;
 
   // #endregion
+
 }
 
 // tslint:disable:object-literal-sort-keys
-export const themes: { [key: string]: Theme } = {
+export const colorThemes: { [key: string]: ColorTheme } = {
   default: {
     // #region Brand colors
-    primary: {
-      default: '#6200EE',
-      dark: '#3700B3',
-      light: '#BB86FC',
-    },
-    secondary: {
-      default: '#03DAC5',
-    },
+    primary: '#6200EE',
+    accent: '#03DAC5',
     // #endregion
 
     // #region Non-Brand colors
-    background: {
-      default: '#FFF',
-    },
-    surface: {
-      default: '#FFF',
-    },
-    error: {
-      default: '#B00020',
-    },
+    background: '#FFF',
+    surface: '#FFF',
+    error: '#B00020',
     // #endregion
 
     // #region Typografy
-    onPrimary: {
-      default: '#FFF',
-    },
-    onSecondary: {
-      default: '#000',
-    },
-    onBackground: {
-      default: '#000',
-    },
-    onSurface: {
-      default: '#000',
-    },
-    onError: {
-      default: '#FFF',
-    },
+    onPrimary: '#FFF',
+    onSecondary: '#000',
+    onBackground: '#000',
+    onSurface: '#000',
+    onError: '#FFF',
     // #endregion
   },
+
+  light: {
+    // #region Brand colors
+    primary: '#BB86FC',
+    accent: '#03DAC5',
+    // #endregion
+
+    // #region Non-Brand colors
+    background: '#FFF',
+    surface: '#FFF',
+    error: '#B00020',
+    // #endregion
+
+    // #region Typografy
+    onPrimary: '#FFF',
+    onSecondary: '#000',
+    onBackground: '#000',
+    onSurface: '#000',
+    onError: '#FFF',
+    // #endregion
+  },
+  dark: {
+    // #region Brand colors
+    primary: '#3700B3',
+    accent: '#03DAC5',
+    // #endregion
+
+    // #region Non-Brand colors
+    background: '#FFF',
+    surface: '#FFF',
+    error: '#B00020',
+    // #endregion
+
+    // #region Typografy
+    onPrimary: '#FFF',
+    onSecondary: '#000',
+    onBackground: '#000',
+    onSurface: '#000',
+    onError: '#FFF',
+    // #endregion
+  }
 };
+
+export const themes: any = mapValues(colorThemes, ({ primary, accent }) => {
+  return {
+    [BUTTON]: { primary, accent, } as ButtonTheme,
+  }
+});
