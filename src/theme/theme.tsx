@@ -1,12 +1,15 @@
-import { mapValues } from 'lodash';
-import { ButtonTheme } from 'react-toolbox/components/button';
-import { BUTTON } from 'react-toolbox/components/identifiers';
+import { createMuiTheme, Theme } from '@material-ui/core';
+import { green } from '@material-ui/core/colors';
+import { Dictionary, mapValues, reduce } from 'lodash';
 
 /**
  * Theme will contain colors for specific purposes, read each type description
  */
 export interface ColorTheme {
   // #region Brand colors
+
+  /** The type of the color theme defines which variant of the theme should be used */
+  type?: undefined | 'light' | 'dark';
 
   /**
    * A primary color is the color displayed most frequently across your app’s screens and components.
@@ -23,7 +26,7 @@ export interface ColorTheme {
    * - Progress bars
    * - Links and headlines
    */
-  accent: string;
+  secondary: string;
 
   // #endregion
 
@@ -58,15 +61,14 @@ export interface ColorTheme {
   onError: string;
 
   // #endregion
-
 }
 
 // tslint:disable:object-literal-sort-keys
-export const colorThemes: { [key: string]: ColorTheme } = {
+export const colorPalettes: Dictionary<ColorTheme> = {
   default: {
     // #region Brand colors
     primary: '#6200EE',
-    accent: '#03DAC5',
+    secondary: '#03DAC5',
     // #endregion
 
     // #region Non-Brand colors
@@ -83,51 +85,59 @@ export const colorThemes: { [key: string]: ColorTheme } = {
     onError: '#FFF',
     // #endregion
   },
-
-  light: {
-    // #region Brand colors
-    primary: '#BB86FC',
-    accent: '#03DAC5',
-    // #endregion
-
-    // #region Non-Brand colors
-    background: '#FFF',
-    surface: '#FFF',
-    error: '#B00020',
-    // #endregion
-
-    // #region Typografy
-    onPrimary: '#FFF',
-    onSecondary: '#000',
-    onBackground: '#000',
-    onSurface: '#000',
-    onError: '#FFF',
-    // #endregion
-  },
-  dark: {
-    // #region Brand colors
-    primary: '#3700B3',
-    accent: '#03DAC5',
-    // #endregion
-
-    // #region Non-Brand colors
-    background: '#FFF',
-    surface: '#FFF',
-    error: '#B00020',
-    // #endregion
-
-    // #region Typografy
-    onPrimary: '#FFF',
-    onSecondary: '#000',
-    onBackground: '#000',
-    onSurface: '#000',
-    onError: '#FFF',
-    // #endregion
-  }
 };
 
-export const themes: any = mapValues(colorThemes, ({ primary, accent }) => {
-  return {
-    [BUTTON]: { primary, accent, } as ButtonTheme,
-  }
-});
+export const colorPalettesWithType = reduce(
+  colorPalettes,
+  (acum, theme, key) => {
+    acum[key] = theme;
+    acum[`${key}Light`] = { ...theme, type: 'light' };
+    acum[`${key}Dark`] = { ...theme, type: 'dark' };
+    return acum;
+  },
+  {} as Dictionary<ColorTheme>,
+);
+
+export const themes: Dictionary<Theme> = {
+  original: createMuiTheme({ typography: { useNextVariants: true } }),
+  originalLight: createMuiTheme({
+    palette: { type: 'light' },
+    typography: { useNextVariants: true },
+  }),
+  originalDark: createMuiTheme({
+    palette: { type: 'dark' },
+    typography: { useNextVariants: true },
+  }),
+  green: createMuiTheme({
+    palette: {
+      primary: green,
+    },
+    typography: { useNextVariants: true },
+  }),
+  greenDark: createMuiTheme({
+    palette: {
+      type: 'dark',
+      primary: green,
+    },
+    typography: { useNextVariants: true },
+  }),
+  greenLight: createMuiTheme({
+    palette: {
+      type: 'light',
+      primary: green,
+    },
+    typography: { useNextVariants: true },
+  }),
+
+  // Use the defined
+  ...mapValues(colorPalettesWithType, ({ type, primary, secondary }) => {
+    return createMuiTheme({
+      palette: {
+        type,
+        primary: { main: primary },
+        secondary: { main: secondary },
+      },
+      typography: { useNextVariants: true },
+    });
+  }),
+};
