@@ -1,71 +1,39 @@
 import './App.scss';
 
-import {
-  AppBar,
-  Button,
-  CssBaseline,
-  ExpansionPanel,
-  ExpansionPanelDetails,
-  ExpansionPanelSummary,
-  IconButton,
-  Toolbar,
-  Typography,
-} from '@material-ui/core';
+import { CssBaseline } from '@material-ui/core';
 import { MuiThemeProvider } from '@material-ui/core/styles';
-import { ExpandMore, Menu } from '@material-ui/icons';
 import React, { Component } from 'react';
+import { BrowserRouter, Route } from 'react-router-dom';
 
+import { LandingPage } from './LandingPage';
+import { MemberArea } from './MemberArea';
 import { themes } from './theme/theme';
 
 class App extends Component {
   state = {
-    dark: false,
-    theme: themes.original,
+    dark: true,
+    theme: themes.originalDark,
   };
 
   changeTheme = () => {
+    const dark = !this.state.dark;
     this.setState({
-      dark: !this.state.dark,
-      theme: this.state.dark ? themes.original : themes.originalDark,
+      dark,
+      theme: dark ? themes.originalDark : themes.original,
     });
   };
 
   render() {
     return (
       <>
-        <MuiThemeProvider theme={this.state.theme}>
-          <CssBaseline />
-          <AppBar position='static'>
-            <Toolbar>
-              <IconButton color='inherit' aria-label='Menu'>
-                <Menu />
-              </IconButton>
-              <Typography variant='h6' color='inherit'>
-                News
-              </Typography>
-              <Button color='inherit'>Login</Button>
-            </Toolbar>
-          </AppBar>
-          <ExpansionPanel>
-            <ExpansionPanelSummary expandIcon={<ExpandMore />}>
-              <Typography>Expansion Panel 1</Typography>
-            </ExpansionPanelSummary>
-            <ExpansionPanelDetails>
-              <Typography>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Suspendisse malesuada lacus ex, sit amet blandit leo lobortis
-                eget.
-              </Typography>
-            </ExpansionPanelDetails>
-          </ExpansionPanel>
-          <Button
-            variant='contained'
-            color='primary'
-            onClick={this.changeTheme}
-          >
-            Switch theme dark
-          </Button>
-        </MuiThemeProvider>
+        <BrowserRouter>
+          <MuiThemeProvider theme={this.state.theme}>
+            <CssBaseline />
+
+            <Route path='/' exact component={LandingPage} />
+            <Route path='/member-area' component={MemberArea} />
+          </MuiThemeProvider>
+        </BrowserRouter>
       </>
     );
   }
