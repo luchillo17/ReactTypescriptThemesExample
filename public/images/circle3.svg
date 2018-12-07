@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128.981 116.981">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #b8ff98;
+      }
+
+      .cls-1, .cls-2 {
+        opacity: 0.4;
+      }
+
+      .cls-2 {
+        fill: #ffde8a;
+      }
+    </style>
+  </defs>
+  <g id="Group_1" data-name="Group 1" transform="translate(-1319 -1303)">
+    <circle id="Circle" class="cls-1" cx="48.5" cy="48.5" r="48.5" transform="translate(1319 1303)"/>
+    <circle id="Circle-2" data-name="Circle" class="cls-2" cx="30" cy="30" r="30" transform="translate(1366.019 1368.019) rotate(-30)"/>
+  </g>
+</svg>

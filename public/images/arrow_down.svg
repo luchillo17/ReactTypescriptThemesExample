@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 4">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #7b8f9d;
+        opacity: 0.7;
+      }
+    </style>
+  </defs>
+  <path id="Fill_3" data-name="Fill 3" class="cls-1" d="M3.583,3.855a.67.67,0,0,0,.833,0L7.749,1.189A.667.667,0,1,0,6.917.146L4,2.48,1.084.146A.667.667,0,1,0,.251,1.189Z"/>
+</svg>

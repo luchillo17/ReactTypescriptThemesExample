@@ -1,0 +1,37 @@
+<svg id="Background-2" data-name="Background" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1965.493 1081">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: url(#linear-gradient);
+      }
+
+      .cls-2 {
+        clip-path: url(#clip-path);
+      }
+
+      .cls-3 {
+        fill: rgba(255,255,255,0.2);
+      }
+    </style>
+    <linearGradient id="linear-gradient" y1="0.5" x2="0.972" y2="0.5" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#4effdf"/>
+      <stop offset="0.513" stop-color="#49bede"/>
+      <stop offset="1" stop-color="#f47ec6"/>
+    </linearGradient>
+    <clipPath id="clip-path">
+      <path id="Background" class="cls-1" d="M0,0S907.725,394.564,1828.5,379.764c83.276-1.339,248.7,222.357,23.5,330.736C1357.621,948.424,38.5,1081,38.5,1081Z"/>
+    </clipPath>
+  </defs>
+  <path id="Background-3" data-name="Background" class="cls-1" d="M0,0S907.725,394.564,1828.5,379.764c83.276-1.339,248.7,222.357,23.5,330.736C1357.621,948.424,38.5,1081,38.5,1081Z"/>
+  <g id="Background-4" data-name="Background" class="cls-2">
+    <g id="Elements" transform="translate(109 390)">
+      <circle id="Oval" class="cls-3" cx="26.5" cy="26.5" r="26.5" transform="translate(0 597)"/>
+      <circle id="Oval-2" data-name="Oval" class="cls-3" cx="15" cy="15" r="15" transform="translate(511 414)"/>
+      <circle id="Oval-3" data-name="Oval" class="cls-3" cx="6.5" cy="6.5" r="6.5" transform="translate(698 223)"/>
+      <circle id="Oval-4" data-name="Oval" class="cls-3" cx="19.5" cy="19.5" r="19.5" transform="translate(990 493)"/>
+      <circle id="Oval-5" data-name="Oval" class="cls-3" cx="13" cy="13" r="13" transform="translate(1488 186)"/>
+      <circle id="Oval-6" data-name="Oval" class="cls-3" cx="10" cy="10" r="10" transform="translate(1042)"/>
+      <circle id="Oval-7" data-name="Oval" class="cls-3" cx="10" cy="10" r="10" transform="translate(134 323)"/>
+    </g>
+  </g>
+</svg>

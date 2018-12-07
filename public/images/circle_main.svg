@@ -1,0 +1,19 @@
+<svg id="Group_2" data-name="Group 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 153 130">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #73d9ff;
+      }
+
+      .cls-1, .cls-2 {
+        opacity: 0.4;
+      }
+
+      .cls-2 {
+        fill: #ec91ff;
+      }
+    </style>
+  </defs>
+  <circle id="Circle" class="cls-1" cx="60" cy="60" r="60"/>
+  <circle id="Circle-2" data-name="Circle" class="cls-2" cx="40" cy="40" r="40" transform="translate(73 50)"/>
+</svg>

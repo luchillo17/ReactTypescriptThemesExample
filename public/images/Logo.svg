@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 210.1 29.475">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #434f57;
+        font-size: 18px;
+        font-family: Arial-Black, Arial;
+        font-weight: 800;
+        letter-spacing: 0.042em;
+      }
+
+      .cls-2 {
+        opacity: 0.75;
+        fill: url(#linear-gradient);
+      }
+
+      .cls-3, .cls-4 {
+        opacity: 0.8;
+      }
+
+      .cls-3 {
+        fill: url(#linear-gradient-2);
+      }
+
+      .cls-4 {
+        fill: url(#linear-gradient-3);
+      }
+
+      .cls-5 {
+        fill: #ef9d54;
+        opacity: 0.3;
+      }
+    </style>
+    <linearGradient id="linear-gradient" x1="0.374" y1="0.936" x2="0.555" y2="0.309" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#fd9a84"/>
+      <stop offset="1" stop-color="#ffd78c"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="0.499" y1="0.895" x2="0.499" y2="0.181" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#b3e496"/>
+      <stop offset="0.484" stop-color="#ffb264"/>
+      <stop offset="1" stop-color="#f26cb0"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-3" x1="0.949" y1="0.749" x2="0.065" y2="0.233" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#eb60a6"/>
+      <stop offset="0.484" stop-color="#c181cf"/>
+      <stop offset="1" stop-color="#9ca6db"/>
+    </linearGradient>
+  </defs>
+  <g id="Logo" transform="translate(-0.9 -0.375)">
+    <text id="Fellows.chat" class="cls-1" transform="translate(47 22)"><tspan x="0" y="0">FELLOWS.CHAT</tspan></text>
+    <g id="Symbol">
+      <g id="Layer_1" transform="translate(33) rotate(180)">
+        <path id="Shape" class="cls-2" d="M0,21H-19.725V0H0Z" transform="translate(0.675 -0.375) rotate(-180)"/>
+        <path id="Shape-2" data-name="Shape" class="cls-3" d="M0,21l-11.475,8.475v-21L0,0Z" transform="translate(0.675 -0.375) rotate(-180)"/>
+        <path id="Shape-3" data-name="Shape" class="cls-4" d="M-11.475,8.475,0,0H-19.725l-11.7,8.775Z" transform="translate(0.675 -0.375) rotate(-180)"/>
+        <path id="Shape-4" data-name="Shape" class="cls-5" d="M0,12.525V0L-8.25.15l.15,1.275h6.75v11.1Z" transform="translate(12.15 -8.85) rotate(-180)"/>
+      </g>
+    </g>
+  </g>
+</svg>
