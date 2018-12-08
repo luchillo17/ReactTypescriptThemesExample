@@ -1,25 +1,16 @@
 import './Header.scss';
 
-import {
-  Grid,
-  Typography,
-  WithTheme,
-  withTheme,
-  withWidth,
-} from '@material-ui/core';
+import { Grid, Typography, withWidth } from '@material-ui/core';
 import { WithWidth } from '@material-ui/core/withWidth';
 import React, { Component, ReactNode } from 'react';
 
-export interface HeaderProps extends Partial<WithWidth> {} // Partial<WithTheme>
+export interface HeaderProps extends Partial<WithWidth> {}
 
 @(withWidth as any)()
-// @(withTheme as any)()
 export class Header extends Component<HeaderProps, {}> {
   state = {};
 
   render(): ReactNode {
-    console.log('Re-render');
-
     const { width } = this.props;
     const justifyCenterXS = {
       ...(width === 'xs' && { justify: 'center' }),
@@ -49,7 +40,5 @@ export class Header extends Component<HeaderProps, {}> {
     );
   }
 }
-// ),
-// );
 
 export default Header;

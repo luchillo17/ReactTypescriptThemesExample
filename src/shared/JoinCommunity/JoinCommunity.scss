@@ -1,0 +1,36 @@
+.JoinCommunity {
+  padding: 40px;
+
+  #JoinDescriptionSubtitle,
+  #JoinPriceSubtitle {
+    padding: 10px;
+    margin-bottom: 40px;
+  }
+
+  #JoinMap,
+  #JoinChatBubble,
+  #JoinSmilyGlasses {
+    vertical-align: sub;
+  }
+
+  #JoinMap,
+  #JoinChatBubble {
+    height: 38px;
+    width: 38px;
+  }
+
+  #JoinSmilyGlasses {
+    height: 21px;
+  }
+
+  #JoinScrollIcon {
+    img:first-child {
+      width: 22px;
+    }
+    img:last-child {
+      animation: bounce 2s infinite;
+      margin-top: 5px;
+      width: 12px;
+    }
+  }
+}
