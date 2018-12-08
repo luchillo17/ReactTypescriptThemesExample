@@ -3,9 +3,8 @@ import './LandingPage.scss';
 import { Button, Grid } from '@material-ui/core';
 import React, { Component } from 'react';
 
-import { JoinCommunity } from '../shared';
+import { JoinCommunity, Header } from '../shared';
 import { DescriptionSection } from './DescriptionSection';
-import { Header } from './Header';
 
 export class LandingPage extends Component {
   state = {};

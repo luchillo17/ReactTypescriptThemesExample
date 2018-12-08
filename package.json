@@ -29,6 +29,7 @@
     "eject": "react-scripts eject"
   },
   "devDependencies": {
+    "@types/classnames": "^2.2.6",
     "@types/jest": "23.3.10",
     "@types/lodash": "^4.14.118",
     "@types/node": "10.12.10",

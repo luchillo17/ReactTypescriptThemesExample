@@ -22,13 +22,13 @@ export class Header extends Component<HeaderProps, {}> {
           <img id='HeaderLogo' src='images/Logo.svg' />
         </Grid>
         <Grid
+          alignItems='center'
           container
           item
-          xs={12}
-          sm={6}
-          alignItems='center'
           justify='flex-end'
           wrap='nowrap'
+          sm={6}
+          xs={12}
           {...justifyCenterXS}
         >
           <img id='HeaderCat' src='images/cat.png' />

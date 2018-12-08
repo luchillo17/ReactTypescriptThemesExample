@@ -1,18 +1,37 @@
 import './DescriptionSection.scss';
 
+import {
+  Grid,
+  Theme,
+  Typography,
+  WithStyles,
+  withStyles,
+} from '@material-ui/core';
+import classNames from 'classnames';
 import React, { Component } from 'react';
-import { Grid, Typography } from '@material-ui/core';
 
-export class DescriptionSection extends Component {
+const styles = (theme: Theme) => ({
+  root: {
+    [theme.breakpoints.down('sm')]: {
+      padding: '10px',
+    },
+  },
+});
+
+interface DescriptionSectionProps extends Partial<WithStyles<typeof styles>> {}
+
+@(withStyles(styles) as any)
+export class DescriptionSection extends Component<DescriptionSectionProps, {}> {
   state = {};
 
   render() {
+    const { classes } = this.props;
     return (
       <Grid
-        id='DescriptionSection'
+        className={classNames('DescriptionSection', classes!.root)}
+        alignItems='center'
         container
         direction='column'
-        alignItems='center'
       >
         <Grid item>
           <img src='images/main-scr.png' />
@@ -21,9 +40,9 @@ export class DescriptionSection extends Component {
         <Grid item>
           <Typography
             id='DescriptionTitle'
-            variant='h5'
             align='center'
             gutterBottom
+            variant='h5'
           >
             <img src='images/think.png' /> Why the name fellows.chat?
           </Typography>

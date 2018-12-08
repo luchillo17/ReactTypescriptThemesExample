@@ -1,5 +1,9 @@
-#DescriptionSection {
+.DescriptionSection {
   padding: 40px;
+
+  img {
+    max-width: 100%;
+  }
 
   div {
     max-width: 892px;
