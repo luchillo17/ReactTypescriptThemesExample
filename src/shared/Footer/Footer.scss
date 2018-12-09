@@ -1,0 +1,43 @@
+.Footer {
+  #FooterPaper {
+    padding: 20px;
+
+    #LogosGrid > div {
+      max-width: 1024px;
+
+      img {
+        height: 80px;
+      }
+    }
+  }
+
+  #FooterSignup {
+    padding: 40px;
+
+    #NewsLetterEmailForm {
+      form {
+        display: flex;
+        max-width: 700px;
+        width: 100%;
+
+        > div:first-child {
+          flex: 1;
+          fieldset {
+            border-bottom-right-radius: 0;
+            border-top-right-radius: 0;
+          }
+        }
+      }
+
+      #NewsLetterEmail {
+        padding: 14px;
+      }
+
+      button {
+        border-bottom-left-radius: 0;
+        border-top-left-radius: 0;
+        padding: 13px 30px;
+      }
+    }
+  }
+}

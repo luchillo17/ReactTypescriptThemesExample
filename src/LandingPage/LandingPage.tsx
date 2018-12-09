@@ -3,7 +3,7 @@ import './LandingPage.scss';
 import { Button, Grid } from '@material-ui/core';
 import React, { Component } from 'react';
 
-import { JoinCommunity, Header } from '../shared';
+import { Footer, Header, JoinCommunity } from '../shared';
 import { DescriptionSection } from './DescriptionSection';
 
 export class LandingPage extends Component {
@@ -25,6 +25,8 @@ export class LandingPage extends Component {
         </JoinCommunity>
 
         <DescriptionSection />
+
+        <Footer />
       </div>
     );
   }
