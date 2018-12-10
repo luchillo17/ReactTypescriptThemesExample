@@ -1,17 +1,38 @@
-import React, { Component } from 'react';
 import './JoinCommunity.scss';
-import { Typography, Grid } from '@material-ui/core';
 
-export interface JoinCommunityProps {
+import {
+  Grid,
+  Theme,
+  Typography,
+  WithStyles,
+  withStyles,
+} from '@material-ui/core';
+import React, { Component } from 'react';
+import classNames from 'classnames';
+
+const styles = (theme: Theme) => ({
+  root: {
+    [theme.breakpoints.down('sm')]: {
+      padding: '20px',
+    },
+  },
+});
+
+interface JoinCommunityProps extends Partial<WithStyles<typeof styles>> {
   onMouseDownButtonClick: () => void;
 }
 
+@(withStyles(styles) as any)
 export class JoinCommunity extends Component<JoinCommunityProps> {
   state = {};
 
   render() {
     return (
-      <Grid container className='JoinCommunity' justify='center'>
+      <Grid
+        container
+        className={classNames('JoinCommunity', this.props.classes!.root)}
+        justify='center'
+      >
         <Typography id='JoinCatchPhraseTitle' variant='h4'>
           Join our <img id='JoinMap' src='images/globe.png' /> global{' '}
           <img id='JoinChatBubble' src='images/chat-txt.png' /> ...community

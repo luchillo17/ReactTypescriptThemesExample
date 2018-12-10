@@ -13,6 +13,9 @@ import {
 import React, { Component } from 'react';
 
 const styles = (theme: Theme) => ({
+  textFieldBg: {
+    background: theme.palette.background.default,
+  },
   logoImage: {
     [theme.breakpoints.down('sm')]: {
       height: '60px!important',
@@ -58,7 +61,7 @@ export class Footer extends Component<FooterProps, {}> {
           {this.getLogosGrid()}
         </Paper>
 
-        <Paper id='FooterSignup' color='secondary'>
+        <Paper id='FooterSignup' square>
           <Grid container direction='column' spacing={24}>
             <Grid item>
               <Typography variant='subtitle1' align='center'>
@@ -71,10 +74,12 @@ export class Footer extends Component<FooterProps, {}> {
               <form>
                 <TextField
                   id='NewsLetterEmail'
+                  className={this.props.classes!.textFieldBg}
                   margin='none'
-                  placeholder='Bare'
+                  placeholder='Your email here'
                   variant='outlined'
                 />
+
                 <Button variant='contained' color='secondary'>
                   Sign me up!
                 </Button>

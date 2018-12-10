@@ -13,7 +13,7 @@ import React, { Component } from 'react';
 const styles = (theme: Theme) => ({
   root: {
     [theme.breakpoints.down('sm')]: {
-      padding: '10px',
+      padding: '20px',
     },
   },
 });
@@ -21,9 +21,7 @@ const styles = (theme: Theme) => ({
 interface DescriptionSectionProps extends Partial<WithStyles<typeof styles>> {}
 
 @(withStyles(styles) as any)
-export class DescriptionSection extends Component<DescriptionSectionProps, {}> {
-  state = {};
-
+export class DescriptionSection extends Component<DescriptionSectionProps> {
   render() {
     const { classes } = this.props;
     return (

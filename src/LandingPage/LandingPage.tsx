@@ -5,6 +5,7 @@ import React, { Component } from 'react';
 
 import { Footer, Header, JoinCommunity } from '../shared';
 import { DescriptionSection } from './DescriptionSection';
+import { ContentLadderSection } from './ContentLadderSection';
 
 export class LandingPage extends Component {
   state = {};
@@ -25,6 +26,8 @@ export class LandingPage extends Component {
         </JoinCommunity>
 
         <DescriptionSection />
+
+        <ContentLadderSection />
 
         <Footer />
       </div>
