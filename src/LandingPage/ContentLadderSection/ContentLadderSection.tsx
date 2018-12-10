@@ -19,7 +19,10 @@ const styles = (theme: Theme) => ({
   },
   olympicContainer: {
     [theme.breakpoints.up('sm')]: {
-      'margin-top': '-100px',
+      'margin-top': '-180px',
+    },
+    [theme.breakpoints.up('md')]: {
+      'margin-top': '-230px',
     },
     [theme.breakpoints.down('sm')]: {
       'padding-top': '10px',
@@ -129,7 +132,7 @@ export class ContentLadderSection extends Component<ContentLadderSectionProps> {
           container
           xs={12}
           sm={6}
-          alignItems='center'
+          alignItems='flex-start'
           justify='center'
         >
           <img src='images/winner.png' />
