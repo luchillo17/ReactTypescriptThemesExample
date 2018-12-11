@@ -33,12 +33,16 @@ export class JoinCommunity extends Component<JoinCommunityProps> {
         className={classNames('JoinCommunity', this.props.classes!.root)}
         justify='center'
       >
-        <Typography id='JoinCatchPhraseTitle' variant='h4'>
+        <Typography id='JoinCatchPhraseTitle' variant='h4' align='center'>
           Join our <img id='JoinMap' src='images/globe.png' /> global{' '}
           <img id='JoinChatBubble' src='images/chat-txt.png' /> ...community
         </Typography>
 
-        <Typography id='JoinDescriptionSubtitle' variant='subtitle1'>
+        <Typography
+          id='JoinDescriptionSubtitle'
+          variant='subtitle1'
+          align='center'
+        >
           <img id='JoinSmilyGlasses' src='images/smily.png' />
           Smart Community for startups, entrepreneurs, everyone to learn, share
           their knowledge and build their career

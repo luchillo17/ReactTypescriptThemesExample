@@ -6,6 +6,7 @@ import React, { Component } from 'react';
 import { Footer, Header, JoinCommunity } from '../shared';
 import { DescriptionSection } from './DescriptionSection';
 import { ContentLadderSection } from './ContentLadderSection';
+import { relative } from 'path';
 
 export class LandingPage extends Component {
   state = {};
@@ -14,7 +15,12 @@ export class LandingPage extends Component {
 
   render() {
     return (
-      <div className='LandingPage'>
+      <Grid
+        className='LandingPage'
+        container
+        direction='column'
+        alignItems='center'
+      >
         <Header />
 
         <JoinCommunity onMouseDownButtonClick={this.onMouseDownButtonClick}>
@@ -25,12 +31,22 @@ export class LandingPage extends Component {
           </Grid>
         </JoinCommunity>
 
+        <Grid
+          id='BGMoonContainer'
+          container
+          item
+          justify='center'
+          style={{ position: 'relative' }}
+        >
+          <img id='BGMoon' src='images/BGMoon.svg' />
+        </Grid>
+
         <DescriptionSection />
 
         <ContentLadderSection />
 
         <Footer />
-      </div>
+      </Grid>
     );
   }
 }

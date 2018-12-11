@@ -1,2 +1,18 @@
 .LandingPage {
+  #BGMoonContainer {
+    width: 100%;
+    height: 15vw;
+  }
+
+  #BGMoon {
+    position: absolute;
+    bottom: -10vw;
+    width: 100%;
+    min-width: 800px;
+    z-index: -1;
+
+    mask-image: linear-gradient(black, black 90%, transparent);
+    object-fit: contain;
+    opacity: 0.6;
+  }
 }

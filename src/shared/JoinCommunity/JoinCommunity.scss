@@ -1,6 +1,11 @@
 .JoinCommunity {
   padding: 40px;
 
+  #JoinCatchPhraseTitle,
+  #JoinDescriptionSubtitle {
+    width: 100%;
+  }
+
   #JoinDescriptionSubtitle,
   #JoinPriceSubtitle {
     padding: 10px;
