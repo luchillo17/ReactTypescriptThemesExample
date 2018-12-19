@@ -3,7 +3,7 @@ import './LandingPage.scss';
 import { Button, Grid } from '@material-ui/core';
 import React, { Component } from 'react';
 
-import { Footer, Header, JoinCommunity } from '../shared';
+import { Footer, Header, JoinCommunity, SnowBackground } from '../shared';
 import { DescriptionSection } from './DescriptionSection';
 import { ContentLadderSection } from './ContentLadderSection';
 import { relative } from 'path';
@@ -46,6 +46,8 @@ export class LandingPage extends Component {
         <ContentLadderSection />
 
         <Footer />
+
+        <SnowBackground />
       </Grid>
     );
   }
