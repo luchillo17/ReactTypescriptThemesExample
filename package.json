@@ -21,7 +21,8 @@
     "redux": "^4.0.1",
     "redux-thunk": "^2.3.0",
     "reselect": "^4.0.0",
-    "three": "^0.99.0"
+    "three": "^0.99.0",
+    "three-gpu-particle-system": "^1.0.0"
   },
   "scripts": {
     "start": "react-scripts start",

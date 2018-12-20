@@ -1,24 +1,25 @@
 import './SnowBackground.scss';
 
 import React, { Component } from 'react';
-import {
-  Scene,
+import Three, {
+  ParticleSystem,
   PerspectiveCamera,
+  Scene,
   WebGLRenderer,
-  BoxGeometry,
-  MeshBasicMaterial,
-  Mesh,
 } from 'three';
+import GPUPlugin from 'three-gpu-particle-system';
+
+const GPUParticleSystem = GPUPlugin(Three);
 
 export class SnowBackground extends Component {
   state = {};
 
-  scene: Scene;
-  mount: HTMLDivElement;
   camera: PerspectiveCamera;
-  renderer: WebGLRenderer;
-  cube: Mesh;
   frameId: any;
+  mount: HTMLDivElement;
+  particleSystem: ParticleSystem;
+  renderer: WebGLRenderer;
+  scene: Scene;
 
   componentDidMount() {
     // Get size of the render
@@ -35,11 +36,9 @@ export class SnowBackground extends Component {
     this.renderer.setSize(width, height);
     this.mount.appendChild(this.renderer.domElement);
 
-    // Add simple Cube
-    const geometry = new BoxGeometry(1, 1, 1);
-    const material = new MeshBasicMaterial({ color: '#433F81' });
-    this.cube = new Mesh(geometry, material);
-    this.scene.add(this.cube);
+    // Add Particle system
+    this.particleSystem = new GPUParticleSystem({ maxParticles: 1000 });
+    this.scene.add(this.particleSystem);
 
     // Start animation cycle
     this.start();
@@ -61,8 +60,8 @@ export class SnowBackground extends Component {
   };
 
   animate = () => {
-    this.cube.rotation.x += 0.01;
-    this.cube.rotation.y += 0.01;
+    // this.cube.rotation.x += 0.01;
+    // this.cube.rotation.y += 0.01;
     this.renderScene();
     this.frameId = window.requestAnimationFrame(this.animate);
   };
